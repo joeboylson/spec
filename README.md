@@ -32,7 +32,7 @@ This is not a regression tool ("did it change?"). It's a specification tool ("is
 ## Install
 
 ```bash
-npm install -D @spec/core
+npm install -D @spec-ui/core
 ```
 
 ## Quick start
@@ -47,8 +47,8 @@ npx spec test       # run all specs
 Create `spec.config.ts` (or run `npx spec init`):
 
 ```ts
-import { defineConfig } from "@spec/core";
-import type { BreakpointsOf, ComponentsOf } from "@spec/core";
+import { defineConfig } from "@spec-ui/core";
+import type { BreakpointsOf, ComponentsOf } from "@spec-ui/core";
 
 const config = defineConfig({
   baseURL: "http://localhost:6006",
@@ -82,8 +82,8 @@ Tag elements with `data-tid` attributes:
 The opinionated pattern: **define your contracts at the top, assert against them in the spec.** A `Contract` defines what a component's CSS _must_ satisfy — it's not duplicating CSS, it's the independent verification that CSS is correct.
 
 ```ts
-import { spec, skip, tid, all, hasWidth, hasHeight, hasCSS, whenHovered } from "@spec/core";
-import type { Contract } from "@spec/core";
+import { spec, skip, tid, all, hasWidth, hasHeight, hasCSS, whenHovered } from "@spec-ui/core";
+import type { Contract } from "@spec-ui/core";
 import type { Breakpoints, Components } from "../spec.config";
 
 // --- Contracts ---
@@ -182,8 +182,8 @@ Review the generated specs, adjust contracts and tolerances, then run:
 The generated file captures every `data-tid` element — dimensions, computed CSS, and spatial relationships at each breakpoint:
 
 ```ts
-import { spec, skip, tid, all, hasWidth, hasHeight, hasCSS } from "@spec/core";
-import type { Contract } from "@spec/core";
+import { spec, skip, tid, all, hasWidth, hasHeight, hasCSS } from "@spec-ui/core";
+import type { Contract } from "@spec-ui/core";
 
 // --- Contracts ---
 
@@ -331,7 +331,7 @@ await t.assert(tid("animation"), whenReducedMotion(hasCSS({ animationDuration: "
 A matcher is a function: `(selector, ctx) => Promise<{ pass, message }>`. Write your own:
 
 ```ts
-import type { Matcher } from "@spec/core";
+import type { Matcher } from "@spec-ui/core";
 
 const hasMinWidth = (min: number): Matcher =>
   async (selector, ctx) => {

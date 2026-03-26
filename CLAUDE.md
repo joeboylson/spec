@@ -47,7 +47,7 @@ Fixture specs require a running server: `npx serve fixture -p 3000`
 - **`skip`** is a tagged no-op SpecFn for breakpoints that don't need assertions.
 - **`CSSSpec`** uses `csstype` Properties for typed camelCase CSS (autocomplete, no `any`).
 - **Breakpoint enforcement** — `spec<Breakpoints>()` is generic over a number union. TypeScript ensures every breakpoint key is present. `defineConfig` uses `<const B>` to infer literal types without `as const`.
-- **Fixture specs import from `dist/`** — ensures shared module instance with the runner. Published consumers import from `@spec/core`.
+- **Fixture specs import from `dist/`** — ensures shared module instance with the runner. Published consumers import from `@spec-ui/core`.
 
 ## CLI Commands
 
@@ -73,7 +73,7 @@ Fixture specs require a running server: `npx serve fixture -p 3000`
 
 ## Package
 
-- Name: `@spec/core`
+- Name: `@spec-ui/core`
 - Scope `@spec` is available on npm
 - Uses `csstype` for typed CSS properties
 - Uses `playwright` as a library (not test runner)

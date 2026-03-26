@@ -338,7 +338,7 @@ const cmdInit = (): number => {
 
   mkdirSync(specsDir, { recursive: true });
 
-  writeFileSync(configPath, `import { defineConfig } from "@spec/core";
+  writeFileSync(configPath, `import { defineConfig } from "@spec-ui/core";
 
 export default defineConfig({
   baseURL: "http://localhost:6006",
@@ -350,8 +350,8 @@ export default defineConfig({
 });
 `);
 
-  writeFileSync(join(specsDir, "example.spec.ts"), `import { spec, skip, tid, all, hasWidth, hasHeight, hasCSS } from "@spec/core";
-import type { Contract } from "@spec/core";
+  writeFileSync(join(specsDir, "example.spec.ts"), `import { spec, skip, tid, all, hasWidth, hasHeight, hasCSS } from "@spec-ui/core";
+import type { Contract } from "@spec-ui/core";
 
 // --- CSS contracts ---
 
@@ -425,7 +425,7 @@ const cmdSnapshot = async (parsed: ParsedArgs): Promise<number> => {
     console.log(`  ${DIM}capturing${RESET} ${BOLD}${name}${RESET} ${DIM}→ ${fullURL}${RESET}`);
 
     const snapshot = await snapshotComponent(name, fullURL, config.breakpoints, parsed.headless);
-    const specCode = generateSpecFile(snapshot, "@spec/core");
+    const specCode = generateSpecFile(snapshot, "@spec-ui/core");
 
     const fileName = name.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-") + ".spec.ts";
     const filePath = join(specsDir, fileName);

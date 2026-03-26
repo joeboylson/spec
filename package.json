@@ -1,5 +1,5 @@
 {
-  "name": "@spec/core",
+  "name": "@spec-ui/core",
   "version": "0.0.1",
   "description": "SPEC — Spatial Properties & Element Contracts. Executable specs for design systems.",
   "type": "module",
