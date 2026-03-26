@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { padding: 40px; font-family: system-ui; }
+
+    .card {
+      border: 1px solid rgb(226, 232, 240);
+      border-radius: 8px;
+      padding: 24px;
+      width: 400px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: rgb(15, 23, 42);
+    }
+
+    .card-body {
+      font-size: 14px;
+      color: rgb(100, 116, 139);
+      margin-bottom: 16px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .card-btn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .card-btn-cancel {
+      background-color: rgb(241, 245, 249);
+      color: rgb(71, 85, 105);
+    }
+
+    .card-btn-confirm {
+      background-color: rgb(59, 130, 246);
+      color: rgb(255, 255, 255);
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        width: 100%;
+      }
+
+      .card-footer {
+        flex-direction: column;
+      }
+
+      .card-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" data-tid="card">
+    <div class="card-title" data-tid="card-title">Confirm Action</div>
+    <div class="card-body" data-tid="card-body">Are you sure you want to proceed?</div>
+    <div class="card-footer" data-tid="card-footer">
+      <button class="card-btn card-btn-cancel" data-tid="card-btn-cancel">Cancel</button>
+      <button class="card-btn card-btn-confirm" data-tid="card-btn-confirm">Confirm</button>
+    </div>
+  </div>
+</body>
+</html>

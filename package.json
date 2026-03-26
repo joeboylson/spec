@@ -1,0 +1,30 @@
+{
+  "name": "@spec/core",
+  "version": "0.0.1",
+  "description": "SPEC — Spatial Properties & Element Contracts. Executable specs for design systems.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "spec": "bin/spec.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "tryout": "npm run build && node --import tsx dist/cli.js test --specs fixture/specs --config fixture/spec.config.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "csstype": "^3.2.3",
+    "glob": "^11.0.0",
+    "playwright": "^1.58.0",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui; }
+
+    .nav {
+      background-color: rgb(30, 41, 59);
+      height: 64px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-link {
+      color: rgb(203, 213, 225);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-link:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    .nav-hamburger {
+      display: none;
+      color: rgb(255, 255, 255);
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .main-content {
+      padding: 32px 24px;
+      max-width: 800px;
+    }
+
+    .main-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: rgb(15, 23, 42);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" data-tid="nav">
+    <span class="nav-logo" data-tid="nav-logo">SPEC</span>
+    <div class="nav-links" data-tid="nav-links">
+      <a class="nav-link" data-tid="nav-link-docs" href="#">Docs</a>
+      <a class="nav-link" data-tid="nav-link-api" href="#">API</a>
+      <a class="nav-link" data-tid="nav-link-github" href="#">GitHub</a>
+    </div>
+    <button class="nav-hamburger" data-tid="nav-hamburger">&#9776;</button>
+  </nav>
+
+  <main class="main-content" data-tid="main-content">
+    <h1 class="main-title" data-tid="main-title">Welcome</h1>
+  </main>
+</body>
+</html>

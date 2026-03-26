@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { padding: 40px; font-family: system-ui; }
+
+    .form {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(51, 65, 85);
+    }
+
+    .form-input {
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid rgb(203, 213, 225);
+      border-radius: 6px;
+      font-size: 16px;
+      color: rgb(15, 23, 42);
+      background-color: rgb(255, 255, 255);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-input:focus {
+      border-color: rgb(59, 130, 246);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .form-input:invalid {
+      border-color: rgb(239, 68, 68);
+    }
+
+    .form-input::placeholder {
+      color: rgb(148, 163, 184);
+    }
+
+    .form-input-textarea {
+      height: 100px;
+      padding: 12px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .form-checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: rgb(59, 130, 246);
+    }
+
+    .form-checkbox-label {
+      font-size: 14px;
+      color: rgb(71, 85, 105);
+    }
+
+    .form-submit {
+      height: 44px;
+      background-color: rgb(59, 130, 246);
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .form-submit:hover {
+      background-color: rgb(37, 99, 235);
+    }
+
+    .form-submit:disabled {
+      background-color: rgb(148, 163, 184);
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 500px) {
+      .form {
+        width: 100%;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form class="form" data-tid="form">
+    <div class="form-row" data-tid="form-row-name">
+      <div class="form-group">
+        <label class="form-label" data-tid="label-first">First Name</label>
+        <input class="form-input" data-tid="input-first" type="text" placeholder="John" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-tid="label-last">Last Name</label>
+        <input class="form-input" data-tid="input-last" type="text" placeholder="Doe" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" data-tid="label-email">Email</label>
+      <input class="form-input" data-tid="input-email" type="email" placeholder="john@example.com" required>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" data-tid="label-message">Message</label>
+      <textarea class="form-input form-input-textarea" data-tid="input-message" placeholder="Your message..."></textarea>
+    </div>
+
+    <div class="form-checkbox-group" data-tid="checkbox-group">
+      <input class="form-checkbox" data-tid="checkbox-terms" type="checkbox" id="terms">
+      <label class="form-checkbox-label" data-tid="label-terms" for="terms">I agree to the terms</label>
+    </div>
+
+    <button class="form-submit" data-tid="btn-submit" type="submit" disabled>Submit</button>
+  </form>
+</body>
+</html>

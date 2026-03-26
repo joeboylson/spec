@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { padding: 200px 40px; font-family: system-ui; }
+
+    .trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background-color: rgb(241, 245, 249);
+      border: 1px solid rgb(203, 213, 225);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      color: rgb(51, 65, 85);
+      position: relative;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgb(15, 23, 42);
+      color: rgb(255, 255, 255);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 50;
+    }
+
+    .tooltip-arrow {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgb(15, 23, 42);
+    }
+
+    .trigger:hover .tooltip {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <button class="trigger" data-tid="trigger">
+    Hover me
+    <span class="tooltip" data-tid="tooltip">
+      This is a tooltip
+      <span class="tooltip-arrow" data-tid="tooltip-arrow"></span>
+    </span>
+  </button>
+</body>
+</html>

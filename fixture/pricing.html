@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { padding: 40px; font-family: system-ui; background-color: rgb(248, 250, 252); }
+
+    .pricing {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .plan {
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(226, 232, 240);
+      border-radius: 12px;
+      padding: 32px;
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-popular {
+      border-color: rgb(59, 130, 246);
+      box-shadow: 0 4px 24px rgba(59, 130, 246, 0.15);
+      position: relative;
+    }
+
+    .plan-popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgb(59, 130, 246);
+      color: rgb(255, 255, 255);
+      padding: 4px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .plan-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: rgb(15, 23, 42);
+      margin-bottom: 8px;
+    }
+
+    .plan-price {
+      font-size: 48px;
+      font-weight: 800;
+      color: rgb(15, 23, 42);
+      margin-bottom: 4px;
+    }
+
+    .plan-price-period {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgb(100, 116, 139);
+    }
+
+    .plan-desc {
+      font-size: 14px;
+      color: rgb(100, 116, 139);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex: 1;
+    }
+
+    .plan-feature {
+      font-size: 14px;
+      color: rgb(51, 65, 85);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .plan-feature::before {
+      content: "✓";
+      color: rgb(34, 197, 94);
+      font-weight: bold;
+    }
+
+    .plan-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .plan-btn-outline {
+      background-color: rgb(255, 255, 255);
+      color: rgb(15, 23, 42);
+      border: 1px solid rgb(226, 232, 240);
+    }
+
+    .plan-btn-primary {
+      background-color: rgb(59, 130, 246);
+      color: rgb(255, 255, 255);
+    }
+
+    .plan-btn-primary:hover {
+      background-color: rgb(37, 99, 235);
+    }
+
+    @media (max-width: 900px) {
+      .pricing {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .plan {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pricing" data-tid="pricing">
+    <div class="plan" data-tid="plan-starter">
+      <div class="plan-name" data-tid="plan-starter-name">Starter</div>
+      <div class="plan-price" data-tid="plan-starter-price">$9<span class="plan-price-period">/mo</span></div>
+      <div class="plan-desc" data-tid="plan-starter-desc">For individuals getting started.</div>
+      <ul class="plan-features" data-tid="plan-starter-features">
+        <li class="plan-feature">5 components</li>
+        <li class="plan-feature">2 breakpoints</li>
+        <li class="plan-feature">Email support</li>
+      </ul>
+      <button class="plan-btn plan-btn-outline" data-tid="plan-starter-btn">Get Started</button>
+    </div>
+
+    <div class="plan plan-popular" data-tid="plan-pro">
+      <span class="plan-popular-badge" data-tid="plan-pro-badge">Most Popular</span>
+      <div class="plan-name" data-tid="plan-pro-name">Pro</div>
+      <div class="plan-price" data-tid="plan-pro-price">$29<span class="plan-price-period">/mo</span></div>
+      <div class="plan-desc" data-tid="plan-pro-desc">For growing teams.</div>
+      <ul class="plan-features" data-tid="plan-pro-features">
+        <li class="plan-feature">Unlimited components</li>
+        <li class="plan-feature">Unlimited breakpoints</li>
+        <li class="plan-feature">Priority support</li>
+        <li class="plan-feature">CI integration</li>
+      </ul>
+      <button class="plan-btn plan-btn-primary" data-tid="plan-pro-btn">Get Started</button>
+    </div>
+
+    <div class="plan" data-tid="plan-enterprise">
+      <div class="plan-name" data-tid="plan-enterprise-name">Enterprise</div>
+      <div class="plan-price" data-tid="plan-enterprise-price">$99<span class="plan-price-period">/mo</span></div>
+      <div class="plan-desc" data-tid="plan-enterprise-desc">For large organizations.</div>
+      <ul class="plan-features" data-tid="plan-enterprise-features">
+        <li class="plan-feature">Everything in Pro</li>
+        <li class="plan-feature">SSO / SAML</li>
+        <li class="plan-feature">Dedicated support</li>
+        <li class="plan-feature">SLA guarantee</li>
+        <li class="plan-feature">Custom adapters</li>
+      </ul>
+      <button class="plan-btn plan-btn-outline" data-tid="plan-enterprise-btn">Contact Sales</button>
+    </div>
+  </div>
+</body>
+</html>
